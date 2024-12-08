@@ -1,7 +1,6 @@
 package pages;
 
 import helpMethods.ElementMethods;
-import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

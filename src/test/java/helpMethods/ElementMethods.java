@@ -39,17 +39,4 @@ public class ElementMethods {
         element.clear();
         element.sendKeys(text);
     }
-
-//    public void clickClearEditElement(WebElement element, String text) {
-//        waitVisibleElement(element);  // Wait until the element is visible
-//        element.click();  // Focus on the element
-//        element.clear();  // Clear the field
-//
-//        // Explicitly wait until the field is empty before sending keys
-//        new WebDriverWait(driver, Duration.ofSeconds(2)).until(
-//                driver -> element.getAttribute("value").isEmpty()
-//        );
-//
-//        element.sendKeys(text);  // Send the new value
-//    }
 }

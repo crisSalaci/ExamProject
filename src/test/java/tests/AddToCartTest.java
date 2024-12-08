@@ -35,10 +35,8 @@ public class AddToCartTest extends Hooks {
         vitaminizarePage.clickVitaminizareProductView();
 
         VitaminizareProductPage vitaminizareProductPage = new VitaminizareProductPage(getDriver());
-        //vitaminizareProductPage.fillQuantityElement();
         vitaminizareProductPage.clickPlusButton();
         vitaminizareProductPage.clickAddToCartButton();
-        //vitaminizareProductPage.checkAddToCartMessage();
         vitaminizareProductPage.clickCartButton();
 
         CartPage cartPage = new CartPage(getDriver());

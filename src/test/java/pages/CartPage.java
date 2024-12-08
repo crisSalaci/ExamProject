@@ -27,13 +27,13 @@ public class CartPage extends BasePage{
     public void checkQtyElement1(){
         String actualQtyElement1 = qtyElement1.getAttribute("value");
         Assert.assertEquals(actualQtyElement1, "1",  "The quantity is incorrect for Element1!");
-        LoggerUtility.infoLog("The user validates the quantity to be: 1");
+        LoggerUtility.infoLog("The user validates the quantity to be 1 for Element1");
     }
 
     public void checkQtyElement2(){
         String actualQtyElement2 = qtyElement2.getAttribute("value");
         Assert.assertEquals(actualQtyElement2, "2",  "The quantity is incorrect for Element2!");
-        LoggerUtility.infoLog("The user validates the quantity to be: 2");
+        LoggerUtility.infoLog("The user validates the quantity to be 2 for Element2");
     }
 
     public void clickRemoveElementsFromCart(){

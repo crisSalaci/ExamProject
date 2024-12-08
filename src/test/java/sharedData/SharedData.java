@@ -8,12 +8,12 @@ import sharedData.browserService.EdgeService;
 @Getter
 public class SharedData {
 
-    private  WebDriver driver;
+    private WebDriver driver;
 
-    public void setupDriver(){
+    public void setupDriver() {
         String browser = System.getProperty("browser");
 
-        switch (browser){
+        switch (browser) {
             case "edge":
                 EdgeService edgeService = new EdgeService();
                 edgeService.openBrowser();
@@ -24,11 +24,10 @@ public class SharedData {
                 chromeService.openBrowser();
                 driver = chromeService.getDriver();
                 break;
-
         }
-
     }
-    public void quitDriver(){
+
+    public void quitDriver() {
         driver.quit();
     }
 }

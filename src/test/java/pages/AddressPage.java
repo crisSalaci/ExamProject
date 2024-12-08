@@ -1,6 +1,5 @@
 package pages;
 
-
 import loggerUtility.LoggerUtility;
 import modelObject.AddressModel;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +41,6 @@ public class AddressPage extends BasePage {
     private WebElement saveElement;
     @FindBy(xpath = "//section[@class='page-content row']//li[text()='Adresa adaugata cu succes!']")
     private WebElement addMessageElement;
-    //@FindBy(xpath = "(//div[@class='address-body card-block'])[2]/address")
     @FindBy(xpath = "(//div[@class='address-body card-block'])[last()]/address")
     private WebElement newAddress;
     @FindBy(xpath = "(//div[@class='address-footer card-footer'])[last()]/a[@data-link-action='delete-address']")
@@ -55,36 +53,26 @@ public class AddressPage extends BasePage {
         elementMethods.clickJSElement(addressElement);
         LoggerUtility.infoLog("The user clicks on Address.");
         elementMethods.clickJSElement(addAddressElement);
-       // String aliasValue = "alias";
         elementMethods.fillElement(aliasElement,testAddressData.getAlias());
         LoggerUtility.infoLog("The user fills the alias field with: "+testAddressData.getAlias());
         elementMethods.waitVisibleElement(lastNameElement);
-        //String lastNameValue="Sal";
         elementMethods.clearEditElement(lastNameElement,testAddressData.getLastName());
         LoggerUtility.infoLog("The user fills the last name field with: "+testAddressData.getLastName());
         elementMethods.waitVisibleElement(firstNameElement);
-        //String firstNameValue="Cris";
         elementMethods.clearEditElement(firstNameElement,testAddressData.getFirstName());
         LoggerUtility.infoLog("The user fills the first name field with: "+testAddressData.getFirstName());
-        //String countryValue = "România";
         elementMethods.fillElement(countryElement,testAddressData.getCountry());
         LoggerUtility.infoLog("The user fills the country field with: "+testAddressData.getCountry());
-        //String stateValue = "Arad";
         elementMethods.fillElement(stateElement,testAddressData.getState());
         LoggerUtility.infoLog("The user fills the state field with: "+testAddressData.getState());
-        //String cityValue = "Arad";
         elementMethods.fillElement(cityElement,testAddressData.getCity());
         LoggerUtility.infoLog("The user fills the city field with: "+testAddressData.getCity());
-       // String address1Value = "strada Garii, numarul 8";
         elementMethods.fillElement(address1Element,testAddressData.getAddress1());
         LoggerUtility.infoLog("The user fills the address1 field with: "+testAddressData.getAddress1());
-        //String address2Value = "bloc A, scara B, apartament 14";
         elementMethods.fillElement(address2Element,testAddressData.getAddress2());
         LoggerUtility.infoLog("The user fills the address2 field with: "+testAddressData.getAddress2());
-        //String postCodeValue = "300789";
         elementMethods.fillElement(postCodeElement,testAddressData.getPostCode());
         LoggerUtility.infoLog("The user fills the post code field with: "+testAddressData.getPostCode());
-        //String phoneValue = "0749234444";
         elementMethods.fillElement(phoneElement,testAddressData.getPhone());
         LoggerUtility.infoLog("The user fills the phone field with: "+testAddressData.getPhone());
         elementMethods.clickJSElement(saveElement);
@@ -105,11 +93,9 @@ public class AddressPage extends BasePage {
     public void checkDeleteAddress(){
         elementMethods.clickJSElement(deleteElement);
         LoggerUtility.infoLog("The user clicks delete.");
-
         String actualDeleteMessage = deleteMessageElement.getText();
         String expectedDeleteMessage = "Adresa stearsa cu succes!";
         LoggerUtility.infoLog("The user validates the message to be: "+expectedDeleteMessage);
         Assert.assertEquals(actualDeleteMessage, expectedDeleteMessage, "The message is incorrect!");
     }
-
 }
